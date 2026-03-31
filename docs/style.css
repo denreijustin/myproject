@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lucida Console';
+    background: #F4F3EE; 
+    color: #463F3A;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    background: #BCB8B1;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+
+.logo {
+    color: #463F3A;
+}
+
+.nav-links {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 30px;
+    font-size: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    color: #463F3A;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+
+.nav-links a:hover {
+    color: #8A817C;
+    transform: scale(1.05);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #8A817C;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    max-width: 900px;
+}
+
+.hero {
+    min-height: 60vh;
+    background: linear-gradient(135deg, #BCB8B1, #F4F3EE);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #463F3A;
+}
+
+.tagline {
+    margin-top: 10px;
+    color: #8A817C;
+}
+
+.card {
+    min-height: 60vh;
+    margin: 20px;
+    padding: 40px 20px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.alt {
+    background: #BCB8B1;
+}
+
+h2 {
+    color: #463F3A;
+    margin-bottom: 10px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.project-box {
+    background: #F4F3EE;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #BCB8B1;
+    transition: 0.3s;
+}
+
+.project-box:hover {
+    transform: translateY(-5px);
+    background: #BCB8B1;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+    }
+}
+.contact {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.contact a {
+  display: inline-flex;        
+  align-items: center;         
+  margin: 10px 12px;
+  padding: 10px 15px;
+  background-color: #8A817C;   
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  background-color: #c5c3c3;
+  color: #050505;
+}
+
+.contact a .social-icon {
+  width: 24px;       
+  height: 24px;
+  margin-right: 8px; 
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
